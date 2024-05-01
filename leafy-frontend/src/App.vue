@@ -2,16 +2,16 @@
   <div id="app">
     <div class="welcome-message" v-if="isLoggedIn">
       <p class="welcome-text">안녕하세요, <span class="user-name">{{ user.name }}</span>님!</p>
-      <p class="description">오늘도 즐거운 식물 관리하세요.</p>
+      <p class="description">어제도 즐거운 식물 관리하세요.</p>
     </div>
     <div class="brand" v-if="isLoggedIn">
       LEAFY
     </div>
-    <NavBar v-if="isLoggedIn"></NavBar>    
+    <NavBar v-if="isLoggedIn"></NavBar>
     <div class="router-view-wrapper">
       <router-view></router-view>
     </div>
-    <footer class="footer" v-if="isLoggedIn"> 
+    <footer class="footer" v-if="isLoggedIn">
       <p>&copy; 2023 Leafy. All rights reserved.</p>
     </footer>
     <BasicPopup :message="popup.message" :status="popup.status" :visible="popup.visible" @close="closePopup" />
@@ -51,7 +51,7 @@ export default {
     };
   },
   methods: {
-    closePopup() {      
+    closePopup() {
       this.$store.commit("setPopup", {
         ...this.popup,
         visible: false,
@@ -78,7 +78,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  position: relative; 
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
